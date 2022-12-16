@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div>
+      <input type="text" v-model="userData.email" placeholder="이메일을 입력하세요.">
+      <input type="password" v-model="userData.password" placeholder="비밀번호를 입력하세요.">
+    </div>
+
+    <button @click="btnOK">확인</button>
+    <div v-show="dataShow">
+      <div>
+        입력된 이메일 : {{ userData.email }} <br>
+        입력된 비밀번호 : {{ userData.password }}
+      </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+  <script>
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          userData: {
+            email: '',
+            password: '',
+          },
+          dataShow: false,
+        }
+      },
+      methods: {
+        btnOK(){
+          this.dataShow = true;
+        }
+      },
+    })
+  </script>
+</body>
+</html>

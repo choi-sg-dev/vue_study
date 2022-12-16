@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 관람평가 -->
+    <span>관람평가</span><br>
+    <input type="text" v-model="movie_review.user" placeholder="이름을 입력해주세요">
+    <textarea v-model="movie_review.comment" name="" id="" cols="30" rows="10"></textarea>
+
+    <button @click="btnOK">확인</button>
+    <div v-show="dataShow">
+      <ul>
+        <li v-for="(movie_review, idx) in movie_reviews" :key="movie_review.idx">
+          <strong>{{ movie_review.user }}</strong> {{ movie_review.comment }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+  <script>
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          userData: {
+            email: '',
+            password: '',
+          },
+          dataShow: false,
+          movie_review : {
+            user: '',
+            comment: ''
+          },
+          movie_reviews : [],
+        }
+      },
+      methods: {
+        btnOK(){
+          this.dataShow = true;
+          this.movie_reviews.push(this.movie_review);
+          this.movie_review = {};
+        }
+      },
+    })
+  </script>
+
+  <style>
+    textarea {display: block; min-width: 400px; height: auto; margin: 10px 0;}
+    ul {list-style: none; padding: 0;}
+    li {background-color: #a7ffeb; border: 2px solid teal; padding: 5px; margin-bottom: 5px;}
+  </style>
+</body>
+</html>
