@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- v-model 과 함께 사용할 수 있는 modifier는 .trim, .number, .lazy가 있다.
+      .trim : 입력되는 데이터에서 좌, 우 공백을 제거하는 데 사용
+      .number : 입력되는 데이터의 타입을 Number로 설정할 수 있음
+      .lazy : change 이벤트가 발생한 후에만 data프로퍼티를 업데이트한다(= input 엘리먼트에 값이 입력되고 포커스가 해제되는 경우 data 프로퍼티를 업데이트 한다.)
+    -->
+    <input type="text" v-model.trim.lazy="userId" placeholder="아이디를 입력하세요.">
+    <input type="password" v-model.trim="password" placeholder="비밀번호를 입력하세요.">
+    <input type="number" v-model.number="age" placeholder="나이를 입력하세요">
+
+    <button @click="checkProperty">버튼</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data() {
+        return {
+          userId : '',
+          password : '',
+          age: 0,
+        }
+      },
+      methods: {
+        checkProperty(){
+          console.log(typeof(this.age));
+        }
+      },
+    })
+  </script>
+
+  <style>
+    
+  </style>
+</body>
+</html>
