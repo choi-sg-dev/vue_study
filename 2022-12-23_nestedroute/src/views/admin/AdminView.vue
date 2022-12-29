@@ -20,6 +20,17 @@ export default {
       title: 'Admin 페이지'
     }
   },
+  /*beforeRouteEnter (to, from, next) {
+    console.log('beforeRouteEnter:' + 'to: ', to, 'from: ', from);
+    next({name: 'login', params: {id: 'cywon', pw: '1234'}})
+    //next(); // to 로 이동시킴
+    //next(false); // false라면 admin 페이지로 이동하지 않는다.
+    //next('/login'); // admin 페이지로 가지않고, login 페이지로 감 (redirect 됨)
+  }*/
+  /*beforeRouteUpdate(to, from, next){ // beforeRouteUpdate : 현재 컴포넌트의 라우트에 변경이 발생하면 호출되는 메서드. (하위 경로에 해당하는 /admin/list, /admin/insert로 이동할 경우 호출된다)
+    console.log("beforeRouteUpdate : " + "to ", to, "from: ", from);
+    next();
+  }*/
 }
 </script>
 
