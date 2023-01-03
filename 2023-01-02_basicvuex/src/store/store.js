@@ -4,7 +4,7 @@ import { createStore } from 'vuex'
 //Vue.use(Vuex)
 
 export default createStore({
-  strict: true,
+  strict: false,
   state: {
     items: [
       {country: "France", city: "Paris", attraction: "에펠탑", entrance_fee: 10},

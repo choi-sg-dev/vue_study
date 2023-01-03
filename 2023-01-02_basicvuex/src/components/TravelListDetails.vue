@@ -2,7 +2,7 @@
   <div id="travellist-details">
     <p>{{this.$store.state.selectedCountry}} 여행 </p>
     <ul>
-      <li v-for="item in items" :key="item.attraction">
+      <li v-for="item in filteredItems" :key="item.attraction">
         <span>도시 :  {{ item.city }}</span> &nbsp;
         <span>명소 :  {{ item.attraction }}</span> &nbsp;
         <span>요금 :  {{ item.entrance_fee }}</span>
