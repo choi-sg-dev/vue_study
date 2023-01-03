@@ -9,20 +9,43 @@
         <span>요금 : {{ item.entrance_fee }}</span> &nbsp;
       </li>
     </ul>
+    <button @click="reducePrice">특별 입장료 할인</button>
     <travellist-details></travellist-details>
   </div>
 </template>
 
 <script>
 import TravelListDetails from './TravelListDetails'
+import { mapActions } from 'vuex'
+//import { mapMutations } from 'vuex'
+
 export default {
   components: {
     'travellist-details': TravelListDetails
   },
   methods: {
-    goCountry(inValue){
-      this.$store.state.selectedCountry = inValue
-    }
+    //...mapMutations(['reducePrice']),
+    //...mapMutations(['goCountry']),
+    ...mapActions(['reducePrice']),
+    ...mapActions(['goCountry']),
+
+    /*goCountry(inValue){
+      //this.$store.state.selectedCountry = inValue
+      
+      //this.$store.commit('goCountry', inValue);
+
+      //this.$store.dispatch('goCountry', inValue);
+      
+    },
+    reducePrice(){
+      // this.$store.state.items.forEach(item => {
+      //   item.entrance_fee = (item.entrance_fee - (item.entrance_fee*0.2))
+      // })
+
+      //this.$store.commit('reducePrice')
+
+      this.$store.dispatch('reducePrice');
+    }*/
   },
   filters: {
     currency(value){
@@ -31,7 +54,7 @@ export default {
   },
   computed: {
     items(){
-      return this.$store.state.items
+      return this.$store.getters.items
     }
   }
 }

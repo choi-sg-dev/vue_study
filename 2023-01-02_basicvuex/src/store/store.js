@@ -14,8 +14,35 @@ export default createStore({
       {country: "Nederland", city: "Amsterdam", attraction: "국립미술관", entrance_fee: 17.50},
     ],
     selectedCountry: '',
-  }
-  // gutters: {},
-  // mutations: {},
-  // actions: {},
+  },
+  getters: {
+    items: state => {
+      return state.items
+    },
+    filteredItems: state => {
+      return state.items.filter(item => { return item.country == state.selectedCountry })
+    }
+  },
+  mutations: {
+    reducePrice: state => {
+      //setTimeout(function(){
+        state.items.forEach(item => {
+          item.entrance_fee = (item.entrance_fee - (item.entrance_fee*0.2))
+        })
+      //}, 4000)
+    },
+    goCountry: (state, inCountry) => {
+      state.selectedCountry = inCountry;
+    }    
+  },
+  actions: {
+    reducePrice:context => {
+      setTimeout(function(){
+        context.commit('reducePrice')
+      }, 4000)
+    },
+    goCountry: (context, inCountry) => {
+      context.commit('goCountry', inCountry)
+    }    
+  },
 })
