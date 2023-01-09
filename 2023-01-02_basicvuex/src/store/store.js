@@ -3,7 +3,7 @@ import { createStore } from 'vuex'
 
 //Vue.use(Vuex)
 
-export default createStore({
+const store = createStore({
   strict: false,
   state: {
     items: [
@@ -45,4 +45,6 @@ export default createStore({
       context.commit('goCountry', inCountry)
     }    
   },
-})
+});
+
+export default store;
