@@ -27,5 +27,3 @@ place.then(function(data){
   console.log(error);
   console.log(JSON.stringify(error));
 })
-
-
