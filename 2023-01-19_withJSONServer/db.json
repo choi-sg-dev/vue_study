@@ -9,6 +9,11 @@
       "id": 2,
       "name": "김창수",
       "email": "cskim@yahoo.com"
+    },
+    {
+      "id": "6",
+      "name": "김가을",
+      "email": "gkim@gmail.com"
     }
   ]
 }
