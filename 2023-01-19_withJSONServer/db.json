@@ -1,19 +1,14 @@
 {
   "employees": [
     {
-      "id": 1,
-      "name": "이재원",
-      "email": "jwlee@google.com"
-    },
-    {
       "id": 2,
       "name": "김창수",
-      "email": "cskim@yahoo.com"
+      "email": "cskim@gmail.com"
     },
     {
-      "id": "6",
-      "name": "김가을",
-      "email": "gkim@gmail.com"
+      "id": "7",
+      "name": "김길동",
+      "email": "csg133@naver.com"
     }
   ]
 }
